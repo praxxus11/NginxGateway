@@ -1,0 +1,12 @@
+services:
+  nginxgateway_reverseproxy:
+    image: registry.gitlab.com/erichuangt/nginxgateway/reverseproxy
+    build: ./
+    networks:
+    - shared_mesh
+    ports:
+    - "80:80"
+
+networks:
+  shared_mesh:
+    name: erichuangt_network
